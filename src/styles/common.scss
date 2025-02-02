@@ -1,0 +1,43 @@
+@use "./variables.scss";
+
+body {
+  font-family: Graphik, Arial, sans-serif;
+  font-weight: 500;
+  height: 200vh;
+  max-width: 100vw;
+}
+
+button:focus {
+  outline: 2px solid #005fcc;
+  outline-offset: 2px;
+  transition: outline 0.2s ease-in-out;
+}
+
+.container {
+  container-type: inline-size;
+  padding-top: 54px;
+}
+
+.text_highlight {
+  color: variables.$text-color-highlight;
+}
+
+.text_tablet-and-desctop-remove {
+  display: none;
+}
+
+@container (max-width: 1024px) {
+  .text_tablet-remove {
+    display: none;
+  }
+}
+
+@container (max-width: 768px) {
+  .text_tablet-and-desctop-remove {
+    display: inline-block;
+  }
+
+  .text_mobile-remove {
+    display: none;
+  }
+}

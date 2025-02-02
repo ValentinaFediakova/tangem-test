@@ -1,0 +1,158 @@
+@use "./variables.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: variables.$background-color-primary;
+  height: 54px;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: variables.$text-color;
+  font-size: 16px;
+}
+
+.header-img {
+  background-image: url("../assets/images/present.png");
+  width: 212px;
+  height: 54px;
+  margin: 0 0 0 8px;
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi) {
+    background-image: url("../assets/images/present@2x.png");
+    width: 212px;
+    height: 54px;
+    background-size: cover;
+  }
+}
+
+.header-text_with-dots {
+  position: relative;
+  margin: 0 27px 0 27px;
+}
+
+.header-text_with-dots::after {
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  background-color: variables.$background-color-button-secondary;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: -12px;
+  transform: translate(-50%, -50%);
+}
+
+.header-text_with-dots::before {
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  background-color: variables.$background-color-button-secondary;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: -12px;
+  transform: translate(-50%, -50%);
+}
+
+.header-buttons {
+  padding: 0 22px 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.header-button-shop {
+  background-color: variables.$background-color-button-primary;
+  color: variables.$text-color-dark;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  cursor: pointer;
+  margin: 0 14px 0 0;
+}
+
+.header-text-gradient {
+  background: linear-gradient(to right, rgb(117, 117, 117, 1) 0%, #000 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header-button-close {
+  background: url("../assets/images/close.svg") no-repeat;
+  width: 24px;
+  height: 24px;
+  border: none;
+}
+
+.header-button-arrow {
+  background: url("../assets/images/arrow.svg") no-repeat;
+  width: 30px;
+  height: 30px;
+  border: none;
+  display: none;
+}
+
+@container (max-width: 1024px) {
+  .header-button-close {
+    display: none;
+  }
+
+  .header-text {
+    font-size: 14px;
+  }
+
+  .header-img {
+    margin: 0;
+    width: 185px;
+    background-position-x: -28px;
+  }
+
+  .header-button-shop {
+    margin: 0;
+  }
+}
+
+@container (max-width: 768px) {
+  .header-text {
+    width: 100%;
+    justify-content: flex-end;
+    padding: 0 38px 0 0;
+  }
+
+  .header-text_with-dots {
+    margin: 0;
+  }
+
+  .header-text_with-dots::after {
+    content: "";
+    display: none;
+  }
+
+  .header-text_with-dots::before {
+    content: "";
+    display: none;
+  }
+
+  .header-img {
+    background-position-x: 0;
+    position: absolute;
+    left: 50%;
+    transform: translate(-145%, 0);
+  }
+
+  .header-button-shop {
+    display: none;
+  }
+
+  .header-button-arrow {
+    display: inline-block;
+  }
+}

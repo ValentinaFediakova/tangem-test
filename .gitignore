@@ -1,0 +1,26 @@
+node_modules/
+dist/
+*.log
+*.lock
+.DS_Store
+.idea/
+.vscode/
+.env
+coverage/
+temp/
+*.tmp
+.cache/
+build/
+
+# Ignore TypeScript build outputs
+*.tsbuildinfo
+
+# Ignore Webpack-related output
+*.webpack
+
+# Ignore Yarn
+.yarn/
+.yarnrc
+
+# Ignore Sass-cache
+.sass-cache/
